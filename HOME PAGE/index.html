@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Finance Tracker</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Smart Finance Tracker</h1>
+    </header>
+    <main>
+         <div class="image-container"><h4></h4> <img src="/SMARTH4/HOME PAGE/business-communication-computer-concept.jpg" alt="/business-communication-computer-concept.jpg"> <H2>ADD DETAILS HERE: </H2> </div> </main>
+    <main>
+        <!-- Block 1: Add Monthly Salary -->
+        <section class="block add-salary">
+            <h2>Add Monthly Salary</h2>
+            <div id="salary-container">
+                <input type="number" id="monthly-salary" placeholder="Enter Monthly Salary">
+                <button onclick="setMonthlySalary()">Submit</button>
+            </div>
+        </section>
+
+        <!-- Block 2: Allocate Savings -->
+        <section class="block savings-allocation hidden">
+            <h2>Allocate Savings</h2>
+            <form id="savingsForm">
+                <label for="savings-emergency">Emergency Fund (%):</label>
+                <input type="number" id="savings-emergency" placeholder="Enter percentage for Emergency Fund">
+
+                <label for="savings-loan">Loan Repayment (%):</label>
+                <input type="number" id="savings-loan" placeholder="Enter percentage for Loan Repayment">
+
+                <label for="savings-health">Health Savings (%):</label>
+                <input type="number" id="savings-health" placeholder="Enter percentage for Health Savings">
+
+                <label for="savings-retirement">Retirement Savings (%):</label>
+                <input type="number" id="savings-retirement" placeholder="Enter percentage for Retirement Savings">
+
+                <button type="submit">Allocate</button>
+            </form>
+        </section>
+
+        <!-- Block 3: Add Expenses -->
+        <section class="block add-expense hidden">
+            <h2>Add Expense</h2>
+            <form id="expenseForm">
+                <label for="category">Category:</label>
+                <input type="text" id="category" required>
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+
+                <button type="submit">Add</button>
+            </form>
+        </section>
+
+        <!-- Block 4: Financial Overview -->
+        <section class="block overview">
+            <h2>Financial Overview</h2>
+            <p><strong>Total Income:</strong> ₹<span id="totalIncome">0.00</span></p>
+            <p><strong>Total Expenses:</strong> ₹<span id="totalExpenses">0.00</span></p>
+            <p><strong>Balance:</strong> ₹<span id="balance">0.00</span></p>
+        </section>
+
+        <!-- Block 5: Expense Breakdown -->
+        <section class="block chart">
+            <h2>Expense Breakdown</h2>
+            <canvas id="expenseChart"></canvas>
+        </section>
+
+        <!-- Block 6: Transaction History -->
+        <section class="block transactions">
+            <h2>Transaction History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTable"></tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
